@@ -54,6 +54,7 @@ def generate_fingerprints(args: Namespace, logger: Logger = None) -> List[List[f
     :param args: Arguments.
     :return: A list of lists of target fingerprints.
     """
+    args.dropout = args.dropout if hasattr(args, 'dropout') else 0
 
     checkpoint_path = args.checkpoint_paths[0]
     if logger is None:
